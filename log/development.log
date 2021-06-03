@@ -22,3 +22,30 @@ FOREIGN KEY ("beach_id")
   [1m[36mTRANSACTION (51.5ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-06-02 23:06:34 -0400
+Started GET "/" for ::1 at 2021-06-02 23:06:34 -0400
+  [1m[35m (27.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/bria/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendering /home/bria/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/bria/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 411.1ms | Allocations: 495)
+  Rendered /home/bria/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 322.9ms | Allocations: 495)
+Completed 200 OK in 1351ms (Views: 701.5ms | ActiveRecord: 0.0ms | Allocations: 4402)
+
+
+Completed 200 OK in 1237ms (Views: 644.6ms | ActiveRecord: 0.0ms | Allocations: 4368)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-06-02 23:06:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/beaches" for ::1 at 2021-06-02 23:06:56 -0400
+Processing by BeachesController#index as HTML
+  [1m[36mBeach Load (21.9ms)[0m  [1m[34mSELECT "beaches".* FROM "beaches"[0m
+  ↳ app/controllers/beaches_controller.rb:8:in `index'
+Completed 200 OK in 503ms (Views: 13.1ms | ActiveRecord: 21.9ms | Allocations: 2738)
+
+
