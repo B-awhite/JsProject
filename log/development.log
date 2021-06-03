@@ -49,3 +49,140 @@ Processing by BeachesController#index as HTML
 Completed 200 OK in 503ms (Views: 13.1ms | ActiveRecord: 21.9ms | Allocations: 2738)
 
 
+Started GET "/api/v1/beaches" for ::1 at 2021-06-02 23:29:45 -0400
+  [1m[35m (27.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/mnt/c/Users/ashafter71/dev/flatiron/projects/beaches_bkend/app/controllers/api/v1/beaches_controller.rb:53: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/api/v1/beaches_controller.rb:53: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/v1/beaches_controller.rb:53: syntax error, unexpected end, expecting end-of-input
+Started GET "/api/v1/beaches" for ::1 at 2021-06-02 23:30:36 -0400
+Processing by Api::V1::BeachesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/beaches_controller.rb:8:in `index'
+  [1m[36mBeach Load (0.7ms)[0m  [1m[34mSELECT "beaches".* FROM "beaches"[0m
+  ↳ app/controllers/api/v1/beaches_controller.rb:8:in `index'
+Completed 200 OK in 35ms (Views: 23.5ms | ActiveRecord: 1.8ms | Allocations: 2875)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20210603025406)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (129.6ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210603025406"]]
+  [1m[36mTRANSACTION (49.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20210603025406)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "beach_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_364d93a078"
+FOREIGN KEY ("beach_id")
+  REFERENCES "beaches" ("id")
+)[0m
+  [1m[35m (23.4ms)[0m  [1m[35mCREATE INDEX "index_comments_on_beach_id" ON "comments" ("beach_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210603025406"]]
+  [1m[36mTRANSACTION (101.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20210603025406)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.9ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210603025406"]]
+  [1m[36mTRANSACTION (87.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBeaches (20210603024502)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.4ms)[0m  [1m[35mDROP TABLE "beaches"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210603024502"]]
+  [1m[36mTRANSACTION (72.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBeaches (20210603024502)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "beaches" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "country" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210603024502"]]
+  [1m[36mTRANSACTION (61.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateComments (20210603025406)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "beach_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_364d93a078"
+FOREIGN KEY ("beach_id")
+  REFERENCES "beaches" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_comments_on_beach_id" ON "comments" ("beach_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210603025406"]]
+  [1m[36mTRANSACTION (80.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (27.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBeach Create (22.8ms)[0m  [1m[32mINSERT INTO "beaches" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Railay Beach"], ["country", "Thailand"], ["created_at", "2021-06-03 03:53:25.269963"], ["updated_at", "2021-06-03 03:53:25.269963"]]
+  [1m[36mTRANSACTION (151.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBeach Create (53.4ms)[0m  [1m[32mINSERT INTO "beaches" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Whitehaven Beach"], ["country", "Australia"], ["created_at", "2021-06-03 03:53:25.464485"], ["updated_at", "2021-06-03 03:53:25.464485"]]
+  [1m[36mTRANSACTION (48.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBeach Create (8.4ms)[0m  [1m[32mINSERT INTO "beaches" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ruby Beach"], ["country", "USA"], ["created_at", "2021-06-03 03:53:25.577156"], ["updated_at", "2021-06-03 03:53:25.577156"]]
+  [1m[36mTRANSACTION (96.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBeach Create (14.9ms)[0m  [1m[32mINSERT INTO "beaches" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Monterosso Al Mare"], ["country", "Italy"], ["created_at", "2021-06-03 03:53:25.689651"], ["updated_at", "2021-06-03 03:53:25.689651"]]
+  [1m[36mTRANSACTION (18.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBeach Create (1.9ms)[0m  [1m[32mINSERT INTO "beaches" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tunnels Beach"], ["country", "USA"], ["created_at", "2021-06-03 03:53:25.731274"], ["updated_at", "2021-06-03 03:53:25.731274"]]
+  [1m[36mTRANSACTION (15.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBeach Create (1.7ms)[0m  [1m[32mINSERT INTO "beaches" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Durdle Door"], ["country", "England"], ["created_at", "2021-06-03 03:53:25.755399"], ["updated_at", "2021-06-03 03:53:25.755399"]]
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBeach Create (1.8ms)[0m  [1m[32mINSERT INTO "beaches" ("name", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tulum"], ["country", "Mexico"], ["created_at", "2021-06-03 03:53:25.777435"], ["updated_at", "2021-06-03 03:53:25.777435"]]
+  [1m[36mTRANSACTION (81.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/beaches" for ::1 at 2021-06-02 23:54:26 -0400
+  [1m[35m (68.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::BeachesController#index as HTML
+  [1m[36mBeach Load (1.2ms)[0m  [1m[34mSELECT "beaches".* FROM "beaches"[0m
+  ↳ app/controllers/api/v1/beaches_controller.rb:8:in `index'
+Completed 200 OK in 255ms (Views: 114.5ms | ActiveRecord: 6.2ms | Allocations: 8132)
+
+
+Started GET "/api/v1/beaches" for ::1 at 2021-06-02 23:57:41 -0400
+Processing by Api::V1::BeachesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/beaches_controller.rb:8:in `index'
+  [1m[36mBeach Load (0.7ms)[0m  [1m[34mSELECT "beaches".* FROM "beaches"[0m
+  ↳ app/controllers/api/v1/beaches_controller.rb:8:in `index'
+Completed 200 OK in 39ms (Views: 32.0ms | ActiveRecord: 5.5ms | Allocations: 5675)
+
+
+Started GET "/api/v1/beaches" for ::1 at 2021-06-02 23:58:11 -0400
+Processing by Api::V1::BeachesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/beaches_controller.rb:8:in `index'
+  [1m[36mBeach Load (0.8ms)[0m  [1m[34mSELECT "beaches".* FROM "beaches"[0m
+  ↳ app/controllers/api/v1/beaches_controller.rb:8:in `index'
+Completed 200 OK in 47ms (Views: 40.6ms | ActiveRecord: 12.6ms | Allocations: 5426)
+
+

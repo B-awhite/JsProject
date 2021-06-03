@@ -5,7 +5,7 @@ class Api::V1::BeachesController < ApplicationController
   def index
     @beaches = Beach.all
 
-    render json: @beaches
+    render json: @beaches, except: [:created_at, :updated_at]
   end
 
   # GET /beaches/1
@@ -40,14 +40,13 @@ class Api::V1::BeachesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_beach
-      @beach = Beach.find(params[:id])
-    end
+  def set_beach
+    @beach = Beach.find(params[:id])
+  end
 
     # Only allow a list of trusted parameters through.
-    def beach_params
-      params.require(:beach).permit(:name, :city)
-    end
-end
+  def beach_params
+    params.require(:beach).permit(:name, :city)
+  end
 
 end
